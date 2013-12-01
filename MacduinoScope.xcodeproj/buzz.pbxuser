@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	0079B1D40F918B3F0090FE0B /* MainView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {947, 977}}";
+			sepNavSelRange = "{650, 0}";
+			sepNavVisRange = "{0, 958}";
+			sepNavWindowFrame = "{{-1139, 207}, {1006, 1105}}";
+		};
+	};
+	0079B1D50F918B3F0090FE0B /* MainView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {954, 2618}}";
+			sepNavSelRange = "{1066, 0}";
+			sepNavVisRange = "{138, 2268}";
+			sepNavWindowFrame = "{{-1131, 215}, {1006, 1105}}";
+		};
+	};
+	0093E81F0FC1EAEF00859938 /* AppController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {947, 977}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 220}";
+			sepNavWindowFrame = "{{869, 73}, {1006, 1105}}";
+		};
+	};
+	0093E8200FC1EAEF00859938 /* AppController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {947, 977}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 559}";
+			sepNavWindowFrame = "{{-1066, 132}, {1006, 1105}}";
+		};
+	};
+	00DF5E710FC328F60037D14C /* userdefaults.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{-1114, 209}, {1006, 1105}}";
+		};
+	};
+	00E102840F9FC6CA00F6234F /* GraphView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {947, 980}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1060}";
+			sepNavWindowFrame = "{{757, 70}, {1006, 1108}}";
+		};
+	};
+	00E102850F9FC6CA00F6234F /* GraphView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {947, 4284}}";
+			sepNavSelRange = "{26, 0}";
+			sepNavVisRange = "{0, 1552}";
+			sepNavWindowFrame = "{{-1059, 225}, {1006, 1108}}";
+		};
+	};
+	00FF251F0FA4A898000FF99E /* MacduinoScope.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {947, 1988}}";
+			sepNavSelRange = "{202, 7}";
+			sepNavVisRange = "{0, 2341}";
+			sepNavWindowFrame = "{{-1260, 178}, {1006, 1108}}";
+		};
+	};
+	00FF25200FA4A898000FF99E /* MacduinoScope.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 7840}}";
+			sepNavSelRange = "{8095, 0}";
+			sepNavVisRange = "{170, 1251}";
+			sepNavWindowFrame = "{{-1134, 178}, {1006, 1105}}";
+		};
+	};
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {947, 1028}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 45}";
+			sepNavWindowFrame = "{{-1905, 216}, {1006, 1156}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = 6BDFF76A103E7BF200557DD8 /* Macduinoscope */;
+		activeTarget = 8D1107260486CEB800E47090 /* Macduinoscope */;
+		codeSenseManager = 6BDFF77D103E7BF900557DD8 /* Code sense */;
+		executables = (
+			6BDFF76A103E7BF200557DD8 /* Macduinoscope */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					300,
+					408,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					324,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					578,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					592,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					478,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 282037367;
+			PBXWorkspaceStateSaveDate = 282037367;
+		};
+		perUserProjectItems = {
+			6B15AA0710CF8C7A009E7752 /* PBXTextBookmark */ = 6B15AA0710CF8C7A009E7752 /* PBXTextBookmark */;
+			6B15AA1710CF8C8C009E7752 /* PBXTextBookmark */ = 6B15AA1710CF8C8C009E7752 /* PBXTextBookmark */;
+			6B5738A71043BCC2002EA1A0 = 6B5738A71043BCC2002EA1A0 /* PBXTextBookmark */;
+			6B5738A81043BCC2002EA1A0 = 6B5738A81043BCC2002EA1A0 /* PBXTextBookmark */;
+			6B9B28791043B0A700DE0BCA = 6B9B28791043B0A700DE0BCA /* PBXTextBookmark */;
+			6B9B287D1043B0A700DE0BCA = 6B9B287D1043B0A700DE0BCA /* PBXTextBookmark */;
+			6B9B287E1043B0A700DE0BCA = 6B9B287E1043B0A700DE0BCA /* PBXTextBookmark */;
+			6B9B28EA1043B64E00DE0BCA = 6B9B28EA1043B64E00DE0BCA /* PBXTextBookmark */;
+			6B9B28EB1043B64E00DE0BCA = 6B9B28EB1043B64E00DE0BCA /* PBXTextBookmark */;
+			6BDFF797103E7F7400557DD8 = 6BDFF797103E7F7400557DD8 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 6BDFF77C103E7BF900557DD8 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {756, 543}}";
+			sepNavSelRange = "{21, 0}";
+			sepNavVisRange = "{0, 256}";
+			sepNavWindowFrame = "{{-1084, 223}, {1006, 1105}}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* MacduinoScope_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {947, 980}}";
+			sepNavSelRange = "{144, 0}";
+			sepNavVisRange = "{0, 144}";
+			sepNavWindowFrame = "{{743, 70}, {1006, 1108}}";
+		};
+	};
+	6B15AA0710CF8C7A009E7752 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 3";
+		rLen = 0;
+		rLoc = 21;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	6B15AA1710CF8C8C009E7752 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 3";
+		rLen = 0;
+		rLoc = 21;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	6B5738A71043BCC2002EA1A0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 3";
+		rLen = 0;
+		rLoc = 21;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	6B5738A81043BCC2002EA1A0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 3";
+		rLen = 0;
+		rLoc = 21;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	6B9B28791043B0A700DE0BCA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00FF251F0FA4A898000FF99E /* MacduinoScope.h */;
+		name = "MacduinoScope.h: 15";
+		rLen = 0;
+		rLoc = 202;
+		rType = 0;
+		vrLen = 1972;
+		vrLoc = 2409;
+	};
+	6B9B287D1043B0A700DE0BCA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00FF251F0FA4A898000FF99E /* MacduinoScope.h */;
+		name = "MacduinoScope.h: 15";
+		rLen = 0;
+		rLoc = 202;
+		rType = 0;
+		vrLen = 1972;
+		vrLoc = 2409;
+	};
+	6B9B287E1043B0A700DE0BCA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00FF25200FA4A898000FF99E /* MacduinoScope.m */;
+		name = "MacduinoScope.m: 529";
+		rLen = 0;
+		rLoc = 17922;
+		rType = 0;
+		vrLen = 978;
+		vrLoc = 825;
+	};
+	6B9B28B71043B36A00DE0BCA /* AppController.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = AppController.m;
+		path = /Applications/MacduinoScope/AppController.m;
+		sourceTree = "<absolute>";
+	};
+	6B9B28EA1043B64E00DE0BCA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 6B9B28B71043B36A00DE0BCA /* AppController.m */;
+		name = "AppController.m: 11";
+		rLen = 0;
+		rLoc = 175;
+		rType = 0;
+		vrLen = 560;
+		vrLoc = 0;
+	};
+	6B9B28EB1043B64E00DE0BCA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00FF25200FA4A898000FF99E /* MacduinoScope.m */;
+		name = "MacduinoScope.m: 7";
+		rLen = 0;
+		rLoc = 142;
+		rType = 0;
+		vrLen = 1460;
+		vrLoc = 0;
+	};
+	6BDFF76A103E7BF200557DD8 /* Macduinoscope */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Macduinoscope;
+		sourceDirectories = (
+		);
+	};
+	6BDFF77C103E7BF900557DD8 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	6BDFF77D103E7BF900557DD8 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	6BDFF797103E7F7400557DD8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0093E8200FC1EAEF00859938 /* AppController.m */;
+		name = "AppController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 559;
+		vrLoc = 0;
+	};
+	8D1107260486CEB800E47090 /* Macduinoscope */ = {
+		activeExec = 0;
+		executables = (
+			6BDFF76A103E7BF200557DD8 /* Macduinoscope */,
+		);
+	};
+	8D1107310486CEB800E47090 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{715, 73}, {1006, 1105}}";
+		};
+	};
+}
