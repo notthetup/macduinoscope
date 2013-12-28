@@ -9,6 +9,11 @@
 uint8_t low1=0, high1=0, low2=0, high2=0;
 uint8_t channel=1, prescale=B100;
 
+ 
+// Pin 13 has an LED connected on most Arduino boards.
+// give it a name:
+int led = 13;
+
 void setup() {
         // the fastest throughput I've gotten is ~1.6Mbit...
         //
@@ -37,9 +42,16 @@ void setup() {
         
         int8_t read_val = -1;
         
+        pinMode(led, OUTPUT); 
+        
+        digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+        delay(300);               // wait for a second
+        digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+        delay(300);               // wait for a second
+          
         // intially set the speed to 1Mbaud and then double it to 2Mbaud with U2X mode
-        Serial.begin(1000000);
-        UCSR0A |= 2;
+        Serial.begin(230400);
+        //UCSR0A |= 2;
         
         // send a message to let the computer know you are alive
         Serial.print("Hello World");
