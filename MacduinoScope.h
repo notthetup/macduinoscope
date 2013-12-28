@@ -77,7 +77,6 @@
 
 @interface MacduinoScope : NSObject {
 	float _sample_buffer[MAX_SAMPLE_BUFFER];
-	int current_sample_index; // the index that is currently being written
 	int trigger_sample_index; // the index where the last trigger happened
 	int trigger_type; // 0 = None, 1 = Auto, 2 = Rising, 3 = Falling, 4 = Ext Rising, 5 = Ext Falling
 	int trigger_threshold; // the threshold of the trigger ( % )

@@ -54,7 +54,7 @@
 // return a error message on error, or nil on success
 - (NSString*) open: (NSString*)bsdPath analogPrescaler: (int) prescaler channel: (int) channel {
 	struct termios options;
-	speed_t baudRate = 2000000; // 2Mbaud
+	speed_t baudRate = 230400; // 2Mbaud
 	unsigned long mics = 3; // receive latency ( 3 microseconds )
 	
 	// close the handle if it's open
@@ -73,7 +73,7 @@
 	}
 	
 	// some message will be put here on an error
-	NSMutableString *errorMessage = nil;
+	NSString *errorMessage = nil;
 	
 	// O_NONBLOCK causes the port to open without any delay (we'll block with another call)
 	serialFileDescriptor = open([bsdPath cStringUsingEncoding:NSUTF8StringEncoding], O_RDWR | O_NOCTTY | O_NONBLOCK);
@@ -110,8 +110,8 @@
 			tcflush(serialFileDescriptor, TCIOFLUSH);
 			
 			// start a new thread to grab data into the buffer
-			[NSThread detachNewThreadSelector:@selector(getDataThread:) toTarget:self withObject:[NSThread currentThread]];
-			//[self performSelectorInBackground:@selector(getDataThread:) withObject:[NSThread currentThread]]; // new 10.5 way...
+			//[NSThread detachNewThreadSelector:@selector(getDataThread:) toTarget:self withObject:[NSThread currentThread]];
+			[self performSelectorInBackground:@selector(getDataThread:) withObject:[NSThread currentThread]]; // new 10.5 way...
 		}
 	}
 	
@@ -130,14 +130,21 @@
 - (void) close {
 	// make sure the handle wasn't already closed
 	if(serialFileDescriptor!=-1) {
+        
+        // Cause the Arduino to reset.
+        [self restartMacduinoScope];
+        
 		// Block until all output has been sent from the device.
 		tcdrain(serialFileDescriptor);
 		tcflush(serialFileDescriptor, TCIOFLUSH);
 		
 		// Reset the port back to how it was before we started
-		if (tcsetattr(serialFileDescriptor, TCSANOW, &gOriginalTTYAttrs) == -1) printf("Error resetting tty attributes - %s(%d).\n", strerror(errno), errno);
+		if (tcsetattr(serialFileDescriptor, TCSANOW, &gOriginalTTYAttrs) != 0)
+            NSLog(@"Error resetting tty attributes - %s(%d).\n", strerror(errno), errno);
 		
-		close(serialFileDescriptor);
+		if (close(serialFileDescriptor) != 0){
+            [NSString stringWithFormat:@"Error closing tty %s(%d).\n", strerror(errno), errno]
+        }
 		serialFileDescriptor = -1;
 		
 		// closing/opening the same port REALLY fast will fail spectacularly... better sleep for a sec 
@@ -156,10 +163,12 @@
 	IOServiceGetMatchingServices(kIOMasterPortDefault, IOServiceMatching(kIOSerialBSDServiceValue), &serialPortIterator);
 	
 	// loop through all the serial ports and add them to the array
-	while (serialPort = IOIteratorNext(serialPortIterator)) {
+    serialPort = IOIteratorNext(serialPortIterator);
+	while (serialPort != 0) {
 		[thePorts addObject:(NSString*)IORegistryEntryCreateCFProperty(serialPort, CFSTR(kIOCalloutDeviceKey),  kCFAllocatorDefault, 0)];
 		//NSLog((NSString*)IORegistryEntryCreateCFProperty(serialPort, CFSTR(kIOCalloutDeviceKey),  kCFAllocatorDefault, 0));
 		IOObjectRelease(serialPort);
+        serialPort = IOIteratorNext(serialPortIterator);
 	}
 	
 	IOObjectRelease(serialPortIterator);
@@ -195,8 +204,7 @@
 	bool throwOutReading = TRUE;
 	int throwOutCount = 0;
 	bool rateLocked = FALSE;
-	int 
-	
+    
 	current_sample_index = 0;
 	innerTrigger = TRUE;
 	floatingAverageSample = 0.5;
@@ -244,7 +252,7 @@
 	while(numBytes>0) {
 		
 		// reset the sample frequency if the period has passed
-		if(current_sample_index>period_sample_length+(hwSampleRate * 10000)) {
+		if( current_sample_index > period_sample_length+(hwSampleRate * 10000)) {
 			trigger_triggered = FALSE;
 			sampleFreq = 0;
 		}
@@ -402,7 +410,6 @@
 - (void) addSample: (float) value {
 	static int lastRead = 0, thisRead; // -1 for low, 0 for N/A, 1 to high
 	static int lastReadCount; // the number of times the last read value occured
-	bool edgeChanged = FALSE;
 	float innerThreshold;
 	
 	samplesPerEdgeCount++;
@@ -448,7 +455,6 @@
 	// when there are enough lows or highs in a row then we know it's a true edge
 	if(lastReadCount > (hwSampleRate * 10)) { // 10 microsecs of samples
 		if(edge!=lastRead) {
-			edgeChanged = TRUE;
 			edge = lastRead;
 			
 			// handle internal triggers

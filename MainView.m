@@ -63,7 +63,7 @@
 	[[NSRunLoop currentRunLoop] addTimer:graphTimer forMode:NSEventTrackingRunLoopMode];
 	
 	// so that the formatter takes effect on the number...
-	[periodSliderText setTitleWithMnemonic:[NSString stringWithFormat:@"%d", [periodSlider intValue]]];
+	[periodSliderText setStringValue:[NSString stringWithFormat:@"%d", [periodSlider intValue]]];
 	
 	theGraph.dataBuffer = serialPort.sample_buffer;
 	theGraph.dataLength = 0;
@@ -78,13 +78,13 @@
 - (void) graphUpdate {
 	if(![holdBtn state]) {
 		if(serialPort.hwSampleRate>0) {
-			[hardwareText setTitleWithMnemonic:
+			[hardwareText setStringValue:
 				[NSString stringWithFormat:
 					@"Sample: %.3f kS\nSync: %.3f %%",
 						serialPort.hwSampleRate*1000,
 						serialPort.hwSync]];
 		} else {
-			[hardwareText setTitleWithMnemonic:[NSString stringWithFormat:@"Sample: ----- kS\nSync: ----- %%"]];
+			[hardwareText setStringValue:[NSString stringWithFormat:@"Sample: ----- kS\nSync: ----- %%"]];
 		}
 		theGraph.dataLength = serialPort.period_sample_length;
 		theGraph.samplePeriod = serialPort.period_time_length;
@@ -92,7 +92,7 @@
 	serialPort.holdPressed = [holdBtn state];
 	[triggerActiveText setBackgroundColor:[NSColor colorWithDeviceRed:!serialPort.trigger_triggered green:1.0 blue:!serialPort.trigger_triggered alpha:1.0]];
 	if([theGraph hasSelection]) {
-		[selectionText setTitleWithMnemonic:[NSString stringWithFormat:@"Min: %.2f%%\nMax: %.2f%%\nRMS: %.2f%%\nTime: %.2fμs\nFreq: %.2fhz",
+		[selectionText setStringValue:[NSString stringWithFormat:@"Min: %.2f%%\nMax: %.2f%%\nRMS: %.2f%%\nTime: %.2fμs\nFreq: %.2fhz",
 						     theGraph.selectedMin*100,
 						     theGraph.selectedMax*100,
 						     theGraph.selectedRMS*100,
@@ -100,7 +100,7 @@
 						     1000000/theGraph.selectedTime
 		 ]];
 	} else {
-		[selectionText setTitleWithMnemonic:[NSString stringWithFormat:@"Min:\nMax:\nRMS:\nTime:\nFreq:"]];
+		[selectionText setStringValue:[NSString stringWithFormat:@"Min:\nMax:\nRMS:\nTime:\nFreq:"]];
 	}
 	[theGraph setNeedsDisplay:YES];
 }
@@ -123,6 +123,7 @@
 			[serialPort open:itemTitle analogPrescaler:7-[hwRatePullDown indexOfSelectedItem] channel:[channelPullDown indexOfSelectedItem]];
 		if(errorMessage!=nil) {
 			[self updateSerialList: errorMessage];
+            NSLog(@"%@",errorMessage);
 		}
 	}
 	if(![serialPort isOpen]) {
