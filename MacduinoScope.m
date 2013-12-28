@@ -143,7 +143,7 @@
             NSLog(@"Error resetting tty attributes - %s(%d).\n", strerror(errno), errno);
 		
 		if (close(serialFileDescriptor) != 0){
-            [NSString stringWithFormat:@"Error closing tty %s(%d).\n", strerror(errno), errno]
+            [NSString stringWithFormat:@"Error closing tty %s(%d).\n", strerror(errno), errno];
         }
 		serialFileDescriptor = -1;
 		
