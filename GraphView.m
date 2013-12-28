@@ -205,7 +205,7 @@
 		hasSelection = FALSE;
 	}
 	
-	if(dataLength>0) {
+	if(dataLength>1) {
 		if([sampleTypePullDown indexOfSelectedItem]==0) {
 			// plot everything
 			path = [NSBezierPath bezierPath];

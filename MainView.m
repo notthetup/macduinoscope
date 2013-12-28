@@ -107,29 +107,32 @@
 
 // handle the serial pull-down selections
 - (IBAction) serialListSelector: (id) theList {
-	NSString *itemTitle = [[serialPullDown selectedItem] title];
-	NSString *topMessage = @"Select a serial port";
-	
-	// check if there is a device selected
-	if([[itemTitle substringToIndex:5] compare:@"/dev/"]) {
-		// if it wasn't a device, then just update the list
-		[self updateSerialList:topMessage];
-	} else {
-		// pop the hold button up
-		[holdBtn setIntValue:0];
-		
-		// setup serial communication on the new port if it is a device
-		NSString *errorMessage = 
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSString *itemTitle = [[serialPullDown selectedItem] title];
+        NSString *topMessage = @"Select a serial port";
+        
+        // check if there is a device selected
+        if([[itemTitle substringToIndex:5] compare:@"/dev/"]) {
+            // if it wasn't a device, then just update the list
+            [self updateSerialList:topMessage];
+        } else {
+            // pop the hold button up
+            [holdBtn setIntValue:0];
+            
+            // setup serial communication on the new port if it is a device
+            NSString *errorMessage =
 			[serialPort open:itemTitle analogPrescaler:7-[hwRatePullDown indexOfSelectedItem] channel:[channelPullDown indexOfSelectedItem]];
-		if(errorMessage!=nil) {
-			[self updateSerialList: errorMessage];
-            NSLog(@"%@",errorMessage);
-		}
-	}
-	if(![serialPort isOpen]) {
-		// go to the top if the port isn't open
-		[serialPullDown selectItemAtIndex:0];
-	}
+            if(errorMessage!=nil) {
+                [self updateSerialList: errorMessage];
+                NSLog(@"%@",errorMessage);
+            }
+        }
+        if(![serialPort isOpen]) {
+            // go to the top if the port isn't open
+            [serialPullDown selectItemAtIndex:0];
+        }
+    });
 }
 
 // update the serial pull-down list with the current serial-ports

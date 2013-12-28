@@ -134,6 +134,8 @@
         // Cause the Arduino to reset.
         [self restartMacduinoScope];
         
+        sleep(1);
+        
 		// Block until all output has been sent from the device.
 		tcdrain(serialFileDescriptor);
 		tcflush(serialFileDescriptor, TCIOFLUSH);
@@ -142,8 +144,9 @@
 		if (tcsetattr(serialFileDescriptor, TCSANOW, &gOriginalTTYAttrs) != 0)
             NSLog(@"Error resetting tty attributes - %s(%d).\n", strerror(errno), errno);
 		
+        NSLog(@"Trying to close %d", serialFileDescriptor);
 		if (close(serialFileDescriptor) != 0){
-            [NSString stringWithFormat:@"Error closing tty %s(%d).\n", strerror(errno), errno];
+            NSLog(@"Error closing tty %s(%d).\n", strerror(errno), errno);
         }
 		serialFileDescriptor = -1;
 		
